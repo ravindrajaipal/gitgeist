@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitGeist — Ghost in the Machine & Digital Ofrenda</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="crt-overlay"></div>
+  <header class="hero">
+    <div class="badge-row">
+      <span class="pill pill-purple">👻 Hacktoberfest 2026 · Week 4: Ghost in the Machine</span>
+      <span class="pill pill-gold">🌼 Día de los Muertos Code Ofrenda</span>
+      <span class="pill pill-green" id="backend-pill">⚡ Offline-First: Gemma 3 + TabPFN</span>
+    </div>
+    <h1>GitGeist: The Ghost in Your Git History</h1>
+    <p class="subtitle">
+      An offline-first haunted terminal &amp; digital <em>ofrenda</em> powered by open-weight AI
+      (<strong>Google Gemma 3</strong> via Ollama + <strong>Prior Labs TabPFN</strong> on CPU).
+      Interrogate cursed 3:00 AM commits, forecast haunting probabilities, and honor retired code—with zero cloud lock-in.
+    </p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div class="panel-header">
+        <h2>🕯️ 1. Summon a Haunted Commit or Scan Local Repo</h2>
+        <button id="scan-repo-btn" class="btn btn-outline">🔍 Scan Local Git Repo</button>
+      </div>
+      <div class="preset-grid" id="preset-buttons"></div>
+    </section>
+
+    <div class="split-grid">
+      <section class="panel terminal-panel">
+        <div class="panel-header">
+          <h2>💀 Haunted Terminal Séance (Gemma 3)</h2>
+          <span class="source-tag" id="seance-source">ollama:gemma3:1b</span>
+        </div>
+        <div class="commit-meta" id="commit-meta"></div>
+        <pre class="code-box" id="suspicious-line"></pre>
+        <div class="whisper-box" id="seance-whisper"></div>
+      </section>
+
+      <section class="panel forecast-panel">
+        <div class="panel-header">
+          <h2>🔮 TabPFN Haunting Forecaster</h2>
+          <span class="source-tag" id="forecast-severity">POLTERGEIST</span>
+        </div>
+        <div class="gauge-wrap">
+          <div class="gauge-number" id="risk-number">--%</div>
+          <div class="gauge-range" id="risk-range">Calibrated 10–90% Range: --% to --%</div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="risk-bar" style="width: 0%"></div>
+          </div>
+        </div>
+        <h3>Primary Haunting Drivers</h3>
+        <ul class="driver-list" id="driver-list"></ul>
+      </section>
+    </div>
+
+    <section class="panel ofrenda-panel">
+      <div class="panel-header">
+        <h2>🌼 Día de los Muertos Digital Code Ofrenda</h2>
+        <span class="marigold-tag">🕯️ Cempasúchil Remembrance Altar</span>
+      </div>
+      <p class="ofrenda-intro">
+        Every deleted function once carried our system through the night. Here we honor retired code and the builders who wrote it.
+      </p>
+      <pre class="code-box ofrenda-code" id="deleted-code"></pre>
+      <blockquote class="ofrenda-tribute" id="ofrenda-tribute"></blockquote>
+    </section>
+
+    <section class="panel custom-panel">
+      <h2>🧪 Test Custom Commit &amp; Sensor Telemetry (100% Local Inference)</h2>
+      <form id="custom-form" class="form-grid">
+        <label>Commit Hash <input type="text" id="f-hash" value="b4dc0de1" /></label>
+        <label>Author <input type="text" id="f-author" value="You (2 years ago)" /></label>
+        <label>Commit Hour (0–23) <input type="number" id="f-hour" min="0" max="23" value="3" /></label>
+        <label>Cyclomatic Complexity Δ <input type="number" id="f-cyclo" step="0.5" value="29.5" /></label>
+        <label>Days Untouched <input type="number" id="f-days" value="940" /></label>
+        <label>Test Coverage (%) <input type="number" id="f-cov" min="0" max="100" value="31" /></label>
+        <label>CPU Thermal Spike (°C) <input type="number" id="f-temp" step="0.5" value="76.5" /></label>
+        <label>Files Touched <input type="number" id="f-files" value="8" /></label>
+        <label class="full-width">Suspicious Line of Code
+          <input type="text" id="f-line" value="GLOBAL_LOCK_TIMEOUT = 0  # bypass deadlock during midnight migration" />
+        </label>
+        <label class="full-width">Retired / Deleted Code for Ofrenda
+          <input type="text" id="f-deleted" value="def verify_ledger_checksum(block): return sha256(block).hexdigest()" />
+        </label>
+        <div class="full-width">
+          <button type="submit" class="btn btn-primary">🕯️ Invoke Local Séance &amp; TabPFN Forecast</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Built with Open-Weight AI (Google Gemma 3 + Prior Labs TabPFN) for the DEV Hacktoberfest 2026 Challenge · MIT License
+  </footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
